@@ -1,4 +1,4 @@
-const img = document.querySelector("[data-perfil] img");
+const imgs = document.querySelectorAll("[data-img]");
 const nome = document.querySelector("[data-perfil] h3");
 const spans = Array.from(document.querySelectorAll(".icon-info"));
 
@@ -16,8 +16,9 @@ const fetchPerfil = async () => {
       perfilJson.html_url,
       perfilJson.email,
     ];
-    img.src = perfilJson.avatar_url;
+    imgs.forEach((img) => (img.src = perfilJson.avatar_url));
     nome.innerText = perfilJson.name;
+    console.log(perfilJson.repos);
     spans.reduce((acumulador, span) => {
       perfilArray[acumulador]
         ? (span.innerText = perfilArray[acumulador])
