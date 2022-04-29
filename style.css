@@ -1,3 +1,5 @@
+@import "/mediaqueries.css";
+
 :root {
   --body-bg-color: #22212c;
   --text-color: #837e9f;
@@ -41,7 +43,7 @@ a {
 /* Coluna do Perfil */
 
 .perfil-col {
-  margin-left: 40px;
+  margin: 0 40px;
 }
 
 .perfil-col > div + div {
@@ -120,13 +122,6 @@ p {
   align-items: center;
 }
 
-.activity-col .projects-container a:hover {
-  background: #9a94bd;
-  color: #706b8c;
-  border-radius: 10px;
-  padding: 5px;
-}
-
 .repo-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -199,4 +194,37 @@ p {
 .posts-col2 p {
   text-align: start;
   margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  .repo-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1050px) {
+  .estrutura {
+    grid-template-columns: 1fr;
+  }
+  .activity-col {
+    margin: 0 40px;
+  }
+}
+
+@media (max-width: 540px) {
+  .posts {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .perfil-col,
+  .activity-col {
+    margin: 0 20px;
+  }
+  .perfil-tools > div {
+    grid-template-columns: 1fr;
+  }
 }
